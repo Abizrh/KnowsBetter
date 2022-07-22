@@ -1,0 +1,16 @@
+[
+  {
+    "name": "How to cook Eggs",
+    "description": "In this course, our instructor will show you how to cook eggs properly and with many different ways",
+    "videoURL": "https://www.youtube.com/watch?v=qWAagS_MANg",
+    "category": "Cooking",
+    "imageURL": "https://static01.nyt.com/images/2021/12/07/dining/AS-olive-oil-fried-egg/merlin_195254193_650a29e7-3d2c-4b62-9735-a9a1999d8fff-articleLarge.jpg"
+  },
+  {
+    "name": "Handling Duck",
+    "description": "Have you ever saw a duck and wanted to grab one but don't know how? Well in this course, you will learn everything you need to know on how to handle a duck in simple steps to make your wish on grabbing a duck (if you ever see one) come true!!",
+    "videoURL": "https://www.youtube.com/watch?v=RhtiDYLbfF4",
+    "category": "Animal",
+    "imageURL": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/how-to-keep-ducks-call-ducks-1615457181.jpg?resize=980:*"
+  }
+]

@@ -1,0 +1,11 @@
+// 1. bikin database
+// 2. bikin migrasi
+// 3. mockaroo isi database
+// 4. seeding
+// 5. set app.js
+// 6. set routes: {
+//   1. ('/', landing page),
+//   2. ('/login', login page),
+//   3. klo gapunya akun, bikin dlu ('/register', regisPage)
+//   4. ('/course/taken')
+// }

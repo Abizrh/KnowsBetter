@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include ('./partials/header') %> 
+</head>
+<body>
+  <div class="form-group text-center">
+    <h2>Profile</h2>
+  </div>
+  <div>
+
+    <% if(success){ %>
+      <div class="alert alert-success" role="alert" >
+        <p style="margin-left: 400px;"><%= success %> </p>
+      </div>
+    <%} %>  
+    <% if(errors){ %>
+      <div class="alert alert-danger" role="alert" >
+        <p style="margin-left: 400px;"><%= errors %> </p>
+      </div>
+    <%} %> 
+  </div>
+ 
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <!-- Form -->
+            <form action="/profile" method="post">
+                <div class="form-group text-center">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" name="firstName" value="<%= user.UserProfile.firstName %>">
+                </div>
+                <div class="form-group text-center">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" name="lastName" value="<%= user.UserProfile.lastName %>">
+                </div>
+                <div class="form-group text-center">
+                  <input type="radio" name="gender" value="male" <%= user.UserProfile.gender == 'male' ? "checked" : "" %>>
+                  <label for="">Male</label>
+                  <input type="radio" name="gender" value="female" <%= user.UserProfile.gender == 'female' ? "checked" : "" %>>
+                  <label for="">Female</label>
+                </div>
+                <div class="form-group text-center">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" class="form-control" name="phoneNumber" value="<%= user.UserProfile.phoneNumber %>">
+                </div>
+                <div class="form-group text-center">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" name="username" value="<%= user.username %>">
+                </div>
+                <div class="form-group text-center">
+                  <label for="password">Password</label>
+                  <input type="text" class="form-control" name="password">
+                </div>
+               
+                <div class="form-group text-center">
+                  <select name="type" id="">
+                    <option value="free" <%= user.type == 'free' ? "Selected" : "" %>>Free</option>
+                    <option value="paid" <%= user.type == 'paid' ? "Selected" : "" %>>Paid</option>
+                  </select>
+                </div>
+                <div class="form-group text-center">
+                  <label for="fav">Favourite Word</label>
+                  <input type="text" class="form-control" name="fav" value="<%= user.UserProfile.fav %>">
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                  </div>
+                  
+                </form>
+</body>
+</html>
