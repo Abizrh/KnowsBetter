@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('./partials/header')  %> 
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light pl-5 pr-5">
+    <a class="navbar-brand" href="/">KnowBetter</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="/list">List Courses<span class="sr-only">(current)</span></a>
+        </div>
+    </div>
+      <a href="/profile" class="nav-item nav-link active" >Profile<span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link active" href="/logout">Log Out<span class="sr-only">(current)</span></a>
+</nav> 
+<div class="form-group text-center">
+    <h2>Hello <%= user.username %></h2>
+</div>
+  <% if(user.Courses.length == 0) {%>
+    <div class="form-group text-center">
+      <h3>You haven't taken any courses</h3>
+  </div>    
+    <% } else { %>
+      <div class="form-group text-center">
+        <h3>Here's the courses that you've taken</h3>
+    </div>
+      <div class="container">
+        <% for(let c of user.Courses) {%>
+          <div class="card">
+            <div class="card-header">
+              <img src="<%= c.imageURL %> " style="width: 400px" alt="photo not found">
+            </div>
+            <div class="card-content" style="width: 400px" >
+              <h4><%= c.name %> </h4>
+              <p><%= c.description %></p>
+               
+            </div>
+            <div class="card-footer">
+              <a href="<%= c.videoURL %> ">
+                <button class="btn btn-info btn-sm">Click here to start your lesson</button>
+              </a>
+            </div>
+          </div>  
+        <% } %> 
+      </div>
+    <% } %>  
+  
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+  *{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  .card {
+    background-color: #fff;
+    margin-bottom: 10px;
+    width: 400px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 8px;
+    
+  }
+
+  .card-header img{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 300px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .card-content{
+    text-align: justify;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .card-footer {
+    padding: 10px;
+  }
+</style>
+</html>

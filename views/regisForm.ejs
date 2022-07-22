@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include ('./partials/header') %> 
+</head>
+<body>
+  <%- include ('./partials/header') %> 
+  <div class="form-group text-center">
+    <h4>Fill the column below to register your account</h4>
+  </div>
+  
+  <div>
+    <% if(errors){ %>
+      <div class="alert alert-danger" role="alert" >
+        <p style="margin-left: 400px;"><%= errors %> </p>
+      </div>
+    <%} %> 
+  </div>
+ 
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <!-- Form -->
+            <form action="/register " method="post">
+                <div class="form-group text-center">
+                  <label for="firstName">First Name</label>
+                  <input type="text" class="form-control" name="firstName">
+                </div>
+                <div class="form-group text-center">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" class="form-control" name="lastName">
+                </div>
+                <div class="form-group text-center">
+                  <input type="radio" name="gender" value="male">
+                  <label for="">Male</label>
+                  <input type="radio" name="gender" value="female">
+                  <label for="">Female</label>
+                </div>
+                <div class="form-group text-center">
+                  <label for="phoneNumber">Phone Number</label>
+                  <input type="text" class="form-control" name="phoneNumber">
+                </div>
+                <div class="form-group text-center">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" name="username">
+                </div>
+                <div class="form-group text-center">
+                  <label for="password">Password</label>
+                  <input type="text" class="form-control" name="password">
+                </div>
+                <div class="form-group text-center">
+                  <label for="fav">Your Favourite Word</label>
+                  <input type="text" class="form-control" name="fav">
+                </div>
+               
+                <div class="form-group text-center">
+                  <select name="type" id="">
+                    <option value="" selected disabled>--Choose Account Type--</option>
+                    <option value="free">Free</option>
+                    <option value="paid">Paid</option>
+                  </select>
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                  </div>
+                  
+                </form>
+                <div class="form-group text-center">
+                  <button class="btn btn-danger"><a href="/login"></a>Cancel</button>
+                </div>
+
+</body>
+</html>
